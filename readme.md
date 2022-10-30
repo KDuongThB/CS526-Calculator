@@ -1,3 +1,13 @@
+# React Native Calculator App
+
+## Team members:
+
+| No.  | Name                | Student ID | Email                | github username| 
+| -----| --------------------| ---------- |----------------------|----------------|
+| 1    |Pham Tan Tai         |20521861    |20521861@gm.uit.edu.vn|tantai040102    |
+| 2    |Duong Thanh Bao Khanh|20521444    |20521444@gm.uit.edu.vn|kduongthb       |
+| 3    |Tran Thi My Quyen    |20520731    |20520731@gm.uit.edu.vn|AzaleaBrowns    |
+| 4    |Nguyen Tam Diep      |19521360    |19521360@gm.uit.edu.vn|                |
 
 ## How to test and debug this app using Expo:
 ### Prerequisites: 
