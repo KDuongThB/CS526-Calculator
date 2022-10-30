@@ -23,7 +23,6 @@ Nhóm 4:
 
 ```
 git clone https://github.com/KDuongThB/CS526-Calculator.git
-cd ./CS526-Calculator
 cd ./calculator
 ``` 
 * Step 2: run the Expo-cli to start debugging
