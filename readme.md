@@ -1,4 +1,3 @@
-Original source code at https://github.com/ProProgramming101/ReactCalculator
 
 ## How to test and debug this app using Expo:
 ### Prerequisites: 
