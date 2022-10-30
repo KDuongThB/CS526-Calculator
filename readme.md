@@ -1,4 +1,8 @@
 # React Native Calculator App
+## Note:
+Nhóm tụi em có nhận được sự chỉ dẫn từ anh Nguyễn Tam Điệp về phần xử lý dữ liệu khi nhập từ bàn phím. Hiện tại anh ấy đã vào nhóm của tụi em nhưng trước khi vào nhóm anh đã code xong bài Calculator của riêng mình nên tụi em quyết định giữ lại cả 2 app Calculator (sau này sẽ gộp lại). Link github code Calculator của anh anh Nguyễn Tam Điệp: 
+https://github.com/nguyentamdiep/CalculatorApp 
+
 
 ## Team members:
 
