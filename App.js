@@ -94,9 +94,9 @@ const App = () => {
       //   return 'SYNTAX ERROR';
       // }
       let str_calculate = '';
-      //let str_store = '';
+      let str_store = '';
       for (let i = 0; i < t.length; i++) {
-        //str_store += t[i];
+        str_store += t[i];
 
         str_calculate += t[i];
       }
@@ -106,7 +106,7 @@ const App = () => {
         if (evaled_str_calculate == 'Infinity') {
           return 'INFINITY';
         } else if (isNumber(evaled_str_calculate)) {
-          //list.push(str_store + '=' + evaled_str_calculate);
+          list.push(str_store + '=' + evaled_str_calculate);
           var his = history;
 
           his.push({

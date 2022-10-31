@@ -24,6 +24,11 @@ Nhóm 4:
 ```
 git clone https://github.com/KDuongThB/CS526-Calculator.git
 cd ./calculator
+npm install
+npm install @react-navigation/native
+npm install @react-navigation/native-stack
+npm install react-native-screens react-native-safe-area-context
+
 ``` 
 * Step 2: run the Expo-cli to start debugging
 ```
