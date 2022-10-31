@@ -20,8 +20,8 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   const [history, setHistory] = useState([]);
-  const [search, setSearch] = useState([]);
-
+  const [search, setSearch] = useState(history);
+  const [inputSearch, setInputSearch] = useState('');
   var list = [];
   const showSearchResultItem = item => {
     return (
@@ -115,7 +115,7 @@ const App = () => {
             result: evaled_str_calculate,
           });
           setHistory(his);
-          setSearch(his);
+        //  setSearch(his);
           return evaled_str_calculate;
         } else {
           return 'SYNTAX ERROR';
@@ -200,6 +200,7 @@ const App = () => {
           style={styles.searchBg}
           placeholder="Search"
           onChangeText={inputSearch => {
+            setInputSearch(inputSearch);
             var x = history.filter((value, index, arr) => {
               return (
                 value.expression.includes(inputSearch) ||
@@ -209,13 +210,17 @@ const App = () => {
             //console.log(x);
             setSearch(x);
           }}
+          defaultValue = {inputSearch}
         />
 
+        
         <FlatList
+          
           data={search}
           renderItem={showSearchResultItem}
           keyExtractor={item => item.id}
         />
+        
       </SafeAreaView>
     );
   };
