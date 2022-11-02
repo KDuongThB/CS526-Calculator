@@ -15,14 +15,57 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {SafeAreaView} from 'react-native-safe-area-context';
 // import Calculator from './screens/Calculator';
 // import History from './screens/History';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+
 
 const Stack = createNativeStackNavigator();
 
+function storeData(value){
+  try {
+    const jsonValue = JSON.stringify(value);
+    AsyncStorage.setItem('@storage_Key6', jsonValue);
+    console.log('luu thanh cong');
+  } catch {
+    // saving error
+    console.log('luu that bai');
+  }
+};
+
+
+function getData(arr) {
+  try {
+    AsyncStorage.getItem('@storage_Key6').then(
+      (value)=>{
+        if (value !== null){
+          k =JSON.parse(value);
+          if (arr.length==0){
+            for (var i=0; i<k.length;i++)
+              arr.push(JSON.parse(JSON.stringify(k[i])));
+          }
+          }
+              
+      }
+    );
+    
+    console.log('read data thanh cong');
+   // jsonValue != null ? JSON.parse(jsonValue) : 
+  } catch{
+    // error reading value
+    console.log('read data that bai');
+    
+  }
+}
+
 const App = () => {
   const [history, setHistory] = useState([]);
-  const [search, setSearch] = useState(history);
+  const [search, setSearch] = useState();
   const [inputSearch, setInputSearch] = useState('');
+  
   var list = [];
+  
+  getData(history);
+
   const showSearchResultItem = item => {
     return (
       <View
@@ -49,6 +92,7 @@ const App = () => {
     const [input, setInput] = useState('');
     const [result, setResult] = useState('');
 
+    
     function isEvalable(text) {
       try {
         eval(text);
@@ -115,6 +159,7 @@ const App = () => {
             result: evaled_str_calculate,
           });
           setHistory(his);
+           storeData;
         //  setSearch(his);
           return evaled_str_calculate;
         } else {
@@ -125,15 +170,17 @@ const App = () => {
       }
     }
 
+      
+
     let operator = ['+', '-', '*', '/', '%'];
     let res = ['='];
-
+    
     return (
       <SafeAreaView style={styles.container}>
         <View style={[styles.historyButton]}>
           <Button
             title="History"
-            onPress={() => navigation.navigate('History')}
+            onPress={() => {navigation.navigate('History'); setSearch(history) }}
             color="#3BBD00"
           />
         </View>
@@ -150,7 +197,12 @@ const App = () => {
             setResult();
           }}
           defaultValue={input}
-          onSubmitEditing={() => setResult(calculator(list, input))}
+          onSubmitEditing={() => {setResult(calculator(list, input)); 
+           // console.log('ok');
+           storeData(history);
+           
+
+          }}
 
           //newResults={() => setResults(calculator(list, result))}
         />
@@ -170,7 +222,7 @@ const App = () => {
           <TouchableOpacity
             defaultValue={input}
             //onSubmitEditing={() => setResult(calculator(list, input))}
-            onPress={() => setResult(calculator(list, input))}
+            onPress={() => {setResult(calculator(list, input)); storeData(history)} }
             //onPress={() => setResults(calculator(list, results))}
             style={styles.equalBackground}>
             <Text style={styles.buttonOperator}>{res}</Text>
@@ -181,8 +233,9 @@ const App = () => {
   };
 
   const History = props => {
+    
     const {navigation} = props;
-
+    
     return (
       <SafeAreaView style={styles.container}>
         {/* <Text style={[styles.searchTitle]}>History</Text> */}
@@ -208,14 +261,17 @@ const App = () => {
               );
             });
             //console.log(x);
+            
+            
             setSearch(x);
           }}
           defaultValue = {inputSearch}
+          
         />
 
         
         <FlatList
-          
+         
           data={search}
           renderItem={showSearchResultItem}
           keyExtractor={item => item.id}
