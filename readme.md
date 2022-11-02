@@ -43,7 +43,7 @@ with yarn:
 ```
 git clone https://github.com/KDuongThB/CS526-Calculator.git
 
-cd CalculatorApp
+cd CS526-Calculator
 
 yarn install
 
