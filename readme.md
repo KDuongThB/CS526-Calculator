@@ -41,7 +41,7 @@ expo start --android
 
 with yarn:
 ```
-git clone https://github.com/nguyentamdiep/CalculatorApp.git
+git clone https://github.com/KDuongThB/CS526-Calculator.git
 
 cd CalculatorApp
 
