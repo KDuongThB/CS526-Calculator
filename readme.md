@@ -19,6 +19,9 @@ Nhóm 4:
 2. install Expo Go on your android device or emulator
 3. Enable Android debugging bridge on your android device/emulator and connect it to the debugging device.
 ### Instruction:
+
+with npm:
+
 * Step 1: Clone the repository
 
 ```
@@ -35,4 +38,19 @@ npm install react-native-screens react-native-safe-area-context
 expo start --android
 ```
 * Step 3: enjoy
+
+with yarn:
+
+`git clone https://github.com/nguyentamdiep/CalculatorApp.git`
+
+`cd CalculatorApp`
+
+`yarn install`
+
+`yarn add @react-navigation/native @react-navigation/native-stack`
+
+`yarn add react-native-screens react-native-safe-area-context`
+
+`yarn start`
+
 
