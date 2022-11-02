@@ -21,10 +21,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Stack = createNativeStackNavigator();
 
-function storeData(value){
+async function storeData(value){
   try {
     const jsonValue = JSON.stringify(value);
-    AsyncStorage.setItem('@storage_Key6', jsonValue);
+    await AsyncStorage.setItem('@storage_Key6', jsonValue);
     console.log('luu thanh cong');
   } catch {
     // saving error
@@ -33,10 +33,9 @@ function storeData(value){
 };
 
 
-function getData(arr) {
+async function getData(arr) {
   try {
-    AsyncStorage.getItem('@storage_Key6').then(
-      (value)=>{
+   const value = await AsyncStorage.getItem('@storage_Key6')
         if (value !== null){
           k =JSON.parse(value);
           if (arr.length==0){
@@ -44,9 +43,7 @@ function getData(arr) {
               arr.push(JSON.parse(JSON.stringify(k[i])));
           }
           }
-              
-      }
-    );
+    
     
     console.log('read data thanh cong');
    // jsonValue != null ? JSON.parse(jsonValue) : 
