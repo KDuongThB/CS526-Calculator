@@ -40,17 +40,18 @@ expo start --android
 * Step 3: enjoy
 
 with yarn:
+```
+git clone https://github.com/nguyentamdiep/CalculatorApp.git
 
-`git clone https://github.com/nguyentamdiep/CalculatorApp.git`
+cd CalculatorApp
 
-`cd CalculatorApp`
+yarn install
 
-`yarn install`
+yarn add @react-navigation/native @react-navigation/native-stack
 
-`yarn add @react-navigation/native @react-navigation/native-stack`
+yarn add react-native-screens react-native-safe-area-context
 
-`yarn add react-native-screens react-native-safe-area-context`
-
-`yarn start`
+yarn start
+```
 
 
